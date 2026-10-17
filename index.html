@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b08">
+  <meta name="description" content="ForexRate — курси валют у реальному часі.">
+  <title>ForexRate — Курси валют</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">↗ Forex<span>Rate</span></a>
+
+    <nav>
+      <a href="#rates">Курси валют</a>
+      <a href="#about">Про сайт</a>
+    </nav>
+
+    <button id="refreshBtn" class="refresh-btn">↻ Оновити</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="live-dot"></span> ВАЛЮТНИЙ ДОВІДНИК
+        </div>
+
+        <h1>Курси валют.<br><span>Без зайвого.</span></h1>
+
+        <p>
+          Стеж за курсами популярних валют.
+          Уся важлива інформація — в одному місці.
+        </p>
+
+        <a href="#rates" class="main-btn">
+          Переглянути курси <span>↗</span>
+        </a>
+
+        <div class="note">✦ Зручний. Сучасний. Швидкий.</div>
+      </div>
+
+      <div class="glass hero-card">
+        <div class="card-heading">
+          <span>Огляд валют</span>
+          <span class="online"><i></i> Онлайн</span>
+        </div>
+
+        <div class="highlight-rate">
+          <div class="currency-icon">$</div>
+          <div class="currency-info">
+            <strong>USD / UAH</strong>
+            <small>Долар США</small>
+          </div>
+          <strong id="heroUsd">—</strong>
+        </div>
+
+        <div class="highlight-rate">
+          <div class="currency-icon euro">€</div>
+          <div class="currency-info">
+            <strong>EUR / UAH</strong>
+            <small>Євро</small>
+          </div>
+          <strong id="heroEur">—</strong>
+        </div>
+
+        <div class="chart">
+          <svg viewBox="0 0 400 90" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#00ff88" stop-opacity=".3"/>
+                <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 70 L35 55 L60 65 L90 40 L120 50 L150 25 L180 40 L210 30 L240 45 L270 20 L300 28 L330 10 L360 25 L400 5 L400 90 L0 90 Z" fill="url(#chartFill)"/>
+            <path d="M0 70 L35 55 L60 65 L90 40 L120 50 L150 25 L180 40 L210 30 L240 45 L270 20 L300 28 L330 10 L360 25 L400 5" fill="none" stroke="#00ff88" stroke-width="2.5"/>
+          </svg>
+        </div>
+
+        <div class="updated" id="updatedAt">
+          Завантаження курсів...
+        </div>
+      </div>
+    </section>
+
+    <section id="rates" class="section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">ВАЛЮТНИЙ РИНОК</div>
+          <h2>Популярні валюти</h2>
+          <p class="subtitle">Курси відносно української гривні.</p>
+        </div>
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="⌕ Знайти валюту..."
+          aria-label="Пошук валюти"
+        >
+      </div>
+
+      <div id="rateGrid" class="rate-grid">
+        <div class="glass loading">Завантажуємо курси валют...</div>
+      </div>
+
+      <p class="disclaimer">
+        Курси довідкові. Значення можуть відрізнятися
+        від курсів НБУ, банків та обмінників.
+      </p>
+    </section>
+
+    <section id="about" class="section about">
+      <div>
+        <div class="eyebrow">FOREXRATE</div>
+        <h2>Усе важливе —<br><span>в одному місці.</span></h2>
+      </div>
+
+      <div class="features">
+        <article class="glass feature">
+          <div class="feature-icon">↗</div>
+          <div>
+            <h3>Популярні валюти</h3>
+            <p>Долар, євро, фунт, злотий та інші валюти.</p>
+          </div>
+        </article>
+
+        <article class="glass feature">
+          <div class="feature-icon">⌕</div>
+          <div>
+            <h3>Швидкий пошук</h3>
+            <p>Знаходь потрібну валюту за назвою або кодом.</p>
+          </div>
+        </article>
+
+        <article class="glass feature">
+          <div class="feature-icon">⟳</div>
+          <div>
+            <h3>Оновлення курсів</h3>
+            <p>Завантажуй найновіші дані, доступні від джерела.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">Forex<span>Rate</span></a>
+    <p>Довідкова інформація про курси валют.</p>
+    <span>© 2026 ForexRate</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
